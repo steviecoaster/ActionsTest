@@ -13,8 +13,8 @@ jobs:
       run: ./run.ps1
       shell: pwsh
     
-    -name: Push to Github Packages
-    run: ./publish.ps1
-    env:
-      TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Push to Github Packages
+      run: ./publish.ps1
+      env:
+        TOKEN: ${{secrets.GITHUB_TOKEN}}
       
