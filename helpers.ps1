@@ -19,5 +19,5 @@ Function Publish-ChocoPackage {
 
     $package = Get-WorkingPackage
     $nupkg = Get-ChildItem $env:GITHUB_WORKSPACE -Recurse -Filter '*.nupkg' | Where-Object { $_.Basename -eq $package }
-    choco push $nupkg.FullName -s Github
+    choco push $nupkg.FullName -s https://nuget.pkg.github.com/steviecoaster/ActionsTest/index.json
 }
