@@ -1,0 +1,8 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+   Create-Chocolatey-Package:
+    runs-on: windows-latest
+    
