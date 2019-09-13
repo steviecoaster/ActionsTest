@@ -8,6 +8,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+
+    - name: Setup
+      run: ./helpers.ps1
+      shell: pwsh
     
     - name: Pack Package
       run: ./run.ps1
