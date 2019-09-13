@@ -15,6 +15,7 @@ jobs:
     
     - name: Push to Github Packages
       run: ./publish.ps1
+      shell: pwsh
       env:
         TOKEN: ${{secrets.GITHUB_TOKEN}}
       
