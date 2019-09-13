@@ -1,0 +1,1 @@
+nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/steviecoaster/ActionsTest/index.json" -UserName steviecoaster -Password "$env:TOKEN"
