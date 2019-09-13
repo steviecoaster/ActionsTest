@@ -18,7 +18,6 @@ function Initialize-ChocoPackage {
 Function Publish-ChocoPackage {
 
     $package = Get-WorkingPackage
-    $nupkg = Get-ChildItem $env:GITHUB_WORKSPACE -Recurse -Filter '*.nupkg' | 
-    Where-Object { $_.Basename -eq $package } | 
-    Foreach-Object { choco push $_.FullName --source="'Github'" }
+    $nupkg = Get-ChildItem $env:GITHUB_WORKSPACE -Recurse -Filter '*.nupkg' | Where-Object { $_.Basename -eq $package }
+    choco push $nupkg.FullName -s Github
 }
