@@ -5,4 +5,10 @@ on:
 jobs:
    Create-Chocolatey-Package:
     runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
     
+    - name: Build
+      run: ./run.ps1
+      shell: pwsh

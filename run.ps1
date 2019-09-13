@@ -11,7 +11,9 @@ function Initialize-ChocoPackage {
     
     $package = Get-WorkingPackage
     $nuspec = Get-ChildItem $env:GITHUB_WORKSPACE -Recurse -Filter '*.nuspec' | Where-Object { $_.BaseName -eq $package }
-    choco pack $nuspec.FullName
+    choco pack $nuspec.FullName --output-directory="'$($env:GITHUB_WORKSPACE)'"
 
 }
+
+Initialize-ChocoPackage
 
